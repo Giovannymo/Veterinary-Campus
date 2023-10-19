@@ -9,6 +9,7 @@ namespace Domain.Entities;
         public MedicineMovement MedicineMovement {get;set;}
         public int IdMedicineFk {get;set;}
         public Medicine Medicine {get;set;}
+        
 
         
     }

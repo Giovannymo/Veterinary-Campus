@@ -4,7 +4,7 @@ namespace Domain.Entities;
 public class MedicalTreatment : BaseEntity
 {
     public int Dosage {get;set;}
-    public DateOnly DateAdmin {get;set;}
+    public DateTime DateAdmin {get;set;}
     public string Observation {get;set;}
     public int IdCitationFk {get;set;}
     public Citation Citation {get;set;}

@@ -7,5 +7,6 @@ namespace Domain.Entities;
         public string Email {get;set;}
         public string Telephone {get;set;}
         public string Specialization {get;set;}
+        public ICollection<Citation> Citations {get;set;}
         
     }

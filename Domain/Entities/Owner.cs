@@ -6,4 +6,7 @@ namespace Domain.Entities;
         public string Name {get;set;}
         public string Email {get;set;}
         public string Telephone {get;set;}
+        public ICollection<Pet> Pets {get;set;}
+        public ICollection<MedicineMovement> MedicineMovements {get;set;}
+        
     }
