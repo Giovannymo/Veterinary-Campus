@@ -1,5 +1,7 @@
 using Application.UnitOfWork;
 using Domain.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 namespace VeterinaryApi.Extension;
 public static class ApplicationServiceExtensions
 {
@@ -17,6 +19,18 @@ public static class ApplicationServiceExtensions
         services.AddScoped<IUnityOfWork, UnityOfWork>();
       
     }
+     public static void ConfigureApiVersioning(this IServiceCollection services)
+    {
+        services.AddApiVersioning(options =>
+        {
+            options.DefaultApiVersion = new ApiVersion(1, 0);//Especifica la version del webapi
+            options.AssumeDefaultVersionWhenUnspecified = true; //Si no se especifica toma la ultima version
+            options.ApiVersionReader = ApiVersionReader.Combine(
+                new QueryStringApiVersionReader("ver"),
+                new HeaderApiVersionReader("X-Version")   
+            );
+            options.ReportApiVersions = true;
+        });
     /* 
 
     public static void AddJwt(this IServiceCollection services, IConfiguration configuration)
@@ -71,17 +85,7 @@ public static class ApplicationServiceExtensions
         });
     }
 
-    public static void ConfigureApiVersioning(this IServiceCollection services)
-    {
-        services.AddApiVersioning(options =>
-        {
-            options.DefaultApiVersion = new ApiVersion(1, 0);
-            options.AssumeDefaultVersionWhenUnspecified = true;
-            options.ApiVersionReader = ApiVersionReader.Combine(
-                new QueryStringApiVersionReader("ver"),
-                new HeaderApiVersionReader("X-Version")   
-            );
-            options.ReportApiVersions = true;
-        });
+   
         }*/ 
     } 
+    }

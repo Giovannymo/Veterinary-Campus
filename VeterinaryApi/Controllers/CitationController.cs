@@ -8,19 +8,22 @@ using Microsoft.AspNetCore.Mvc;
 using VeterinaryApi.Dtos;
 
 namespace VeterinaryApi.Controllers;
+[ApiVersion("1.0")]
+[ApiVersion("1.1")]
+
 
 public class CitationController : BaseApiController 
 {
     private readonly IUnityOfWork _unityOfWork;
     private readonly IMapper _mapper;
-
     public CitationController(IUnityOfWork unityOfWork,IMapper mapper)
     {
         _unityOfWork = unityOfWork;
         _mapper = mapper;
     }
-    /* [MapToApiVersion("1.0")] /* 
-    [Authorize(Roles = "Administrator, Employee")] */
+
+    [MapToApiVersion("1.0")]/* 
+    [Authorize(Roles = "Administrator, Employee")]  */
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

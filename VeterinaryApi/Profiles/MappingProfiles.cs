@@ -8,6 +8,6 @@ namespace VeterinaryApi.Profiles;
     {
         public MappingProfiles(){
             CreateMap<Citation, CitationDto>().ReverseMap();
-            CreateMap<Veterinarian, VeterinarianDto>().ReverseMap();
+            CreateMap<Veterinarian, VeterinarianDto>().ReverseMap().ForMember(m => m.Citations, d => d.Ignore());
         }
     }
