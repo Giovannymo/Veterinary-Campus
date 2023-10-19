@@ -32,4 +32,47 @@ public class CitationController : BaseApiController
         var citations = await _unityOfWork.Citations.GetAllAsync();
         return _mapper.Map<List<CitationDto>>(citations);
     }
+
+
+    [HttpPost]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<CitationDto>> Post(CitationDto citationDto)
+    {
+        var citation = _mapper.Map<Citation>(citationDto);
+        _unityOfWork.Citations.Add(citation);
+        await _unityOfWork.SaveAsync();
+
+        if (citation == null)
+        {
+            return BadRequest();
+        }
+        return CreatedAtAction(nameof(Post),new {id = citation.Id}, citationDto);
+    }
+
+
+    [HttpPut("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<CitationDto>> Put(int id, [FromBody] CitationDto citationDto)
+    {
+        if (citationDto == null) return NotFound();
+        var citation = _mapper.Map<Citation>(citationDto);
+        _unityOfWork.Citations.Update(citation);
+        await _unityOfWork.SaveAsync();
+        return citationDto;
+    }
+
+    [HttpDelete("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var citation = await _unityOfWork.Citations.GetByIdAsync(id);
+        if (citation == null) return NotFound();
+        _unityOfWork.Citations.Remove(citation);
+        await _unityOfWork.SaveAsync();
+        return NoContent();
+    }
 }
