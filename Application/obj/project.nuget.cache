@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SAeFWfjkaSTbfzsFm2xwWDnO/pkWQ0A+SAMC2MHlhWsjwmJKWuOR7OuDNoVEYnceYZ8uJUvhj8TlVcxIwZ5WPQ==",
+  "dgSpecHash": "4V8bsumQi5IT8cHCTj7+LavKDTgVsvtMxPeYvGZqimVVqIrg2c7kIdfa4jjWHvsUYPQmw90ucMXMOgmJJf0uaQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\gio\\Documents\\PROGRAMACION\\Campus\\projectsNetCore\\Veterinary-Campus\\Application\\Application.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\gio\\.nuget\\packages\\itext.commons\\8.0.1\\itext.commons.8.0.1.nupkg.sha512",
     "C:\\Users\\gio\\.nuget\\packages\\itext.pdfhtml\\5.0.1\\itext.pdfhtml.5.0.1.nupkg.sha512",
     "C:\\Users\\gio\\.nuget\\packages\\itext7.pdfhtml\\5.0.1\\itext7.pdfhtml.5.0.1.nupkg.sha512",
+    "C:\\Users\\gio\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.1.0\\microsoft.aspnetcore.mvc.versioning.5.1.0.nupkg.sha512",
     "C:\\Users\\gio\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\gio\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\1.1.0\\microsoft.dotnet.platformabstractions.1.1.0.nupkg.sha512",
     "C:\\Users\\gio\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.10\\microsoft.entityframeworkcore.7.0.10.nupkg.sha512",
