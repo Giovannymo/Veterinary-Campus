@@ -1,3 +1,5 @@
+using Application.UnitOfWork;
+using Domain.Interfaces;
 namespace VeterinaryApi.Extension;
 public static class ApplicationServiceExtensions
 {
@@ -9,13 +11,13 @@ public static class ApplicationServiceExtensions
                     .AllowAnyMethod()       
                     .AllowAnyHeader());     
         });
-/* 
+
     public static void AddAplicacionServices(this IServiceCollection services)
     {
-        services.AddScoped<IUnitOfWork, UnitOfWork>();
-        services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
-        services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IUnityOfWork, UnityOfWork>();
+      
     }
+    /* 
 
     public static void AddJwt(this IServiceCollection services, IConfiguration configuration)
     {
